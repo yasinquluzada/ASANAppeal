@@ -693,9 +693,3 @@ export ASAN_SQLITE_BACKUP_PAGES_PER_STEP=128
 
 This means the system stays usable in development, but becomes genuinely live when an API key is configured.
 
-## Suggested Next Build Steps
-
-1. Replace the embedded Naive Bayes seed data with reviewed real-case exports from SQLite.
-2. Add local eval datasets for intake, routing, priority, and verification.
-3. Add institution and reviewer authentication.
-4. Add a frontend for citizen submission and review operations.
