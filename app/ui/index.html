@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASANAppeal Portal</title>
+    <link rel="stylesheet" href="/app-assets/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Civic Intake and Operations</p>
+          <h1>ASANAppeal Portal</h1>
+          <p class="hero-text">
+            A live citizen intake workspace and operator dashboard for submission,
+            triage, analytics, and institution response verification.
+          </p>
+        </div>
+        <div class="hero-status">
+          <div class="status-card status-card-auth">
+            <p class="status-label">Access Control</p>
+            <form id="auth-form" class="stack compact-stack">
+              <label class="field">
+                <span>Username</span>
+                <input id="auth-username" type="text" placeholder="citizen.demo" />
+              </label>
+              <label class="field">
+                <span>Password</span>
+                <input id="auth-password" type="password" placeholder="demo password" />
+              </label>
+              <div class="quick-links">
+                <button id="auth-login" type="submit">Login</button>
+                <button id="auth-logout" type="button">Logout</button>
+              </div>
+              <p id="auth-status" class="status-detail">
+                Sign in with a citizen, operator, reviewer, institution, or admin account to use the secured API.
+              </p>
+            </form>
+          </div>
+          <div class="status-card">
+            <p class="status-label">Service Health</p>
+            <p id="health-status" class="status-value">Checking…</p>
+            <p id="health-detail" class="status-detail"></p>
+          </div>
+          <div class="status-card status-card-accent">
+            <p class="status-label">Quick Links</p>
+            <div class="quick-links">
+              <a href="/docs" target="_blank" rel="noreferrer">API Docs</a>
+              <button id="refresh-all" type="button">Refresh Portal</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <nav class="tabbar" aria-label="Portal sections">
+        <button class="tab-button is-active" data-tab="citizen">Citizen Intake</button>
+        <button class="tab-button" data-tab="review">Reviewer Desk</button>
+        <button class="tab-button" data-tab="analytics">Analytics</button>
+        <button class="tab-button" data-tab="institution">Institution Response</button>
+      </nav>
+
+      <main class="portal-grid">
+        <section class="panel is-active" data-panel="citizen">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Public Submission</p>
+              <h2>Citizen Intake UI</h2>
+            </div>
+            <p class="panel-description">
+              Create a case, upload evidence, and inspect the AI result before dispatch.
+            </p>
+          </div>
+          <form id="citizen-form" class="stack">
+            <div class="field-grid">
+              <label class="field field-span-2">
+                <span>Describe the issue</span>
+                <textarea
+                  id="citizen-text"
+                  rows="6"
+                  placeholder="Describe what happened, where it is, and why it matters."
+                  required
+                ></textarea>
+              </label>
+              <label class="field">
+                <span>Language</span>
+                <select id="citizen-language">
+                  <option value="en">English</option>
+                  <option value="az">Azerbaijani</option>
+                  <option value="tr">Turkish</option>
+                  <option value="ru">Russian</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Location hint</span>
+                <input id="citizen-location" type="text" placeholder="Landmark, street, district" />
+              </label>
+              <label class="field">
+                <span>Time hint</span>
+                <input id="citizen-time" type="text" placeholder="Observed time or date" />
+              </label>
+              <label class="field">
+                <span>Evidence files</span>
+                <input id="citizen-files" type="file" multiple />
+              </label>
+            </div>
+
+            <div class="support-block">
+              <div>
+                <p class="support-title">Selected evidence</p>
+                <ul id="citizen-file-list" class="token-list"></ul>
+              </div>
+              <div class="support-actions">
+                <button class="primary-button" type="submit">Process Submission</button>
+              </div>
+            </div>
+          </form>
+          <div id="citizen-result" class="result-card empty-state">
+            Process a submission to see the structured issue, route, priority, and draft.
+          </div>
+        </section>
+
+        <section class="panel" data-panel="review">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Operator Workflow</p>
+              <h2>Reviewer Desk</h2>
+            </div>
+            <p class="panel-description">
+              Refresh the review queue, open a case, and execute workflow actions from one place.
+            </p>
+          </div>
+
+          <div class="split-layout">
+            <aside class="sidebar-card">
+              <form id="review-filters" class="stack compact-stack">
+                <label class="field">
+                  <span>Queue</span>
+                  <input id="review-queue-filter" type="text" placeholder="legal-review" />
+                </label>
+                <label class="field">
+                  <span>Assignment state</span>
+                  <select id="review-assignment-filter">
+                    <option value="">All</option>
+                    <option value="assigned">Assigned</option>
+                    <option value="unassigned">Unassigned</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Priority</span>
+                  <select id="review-priority-filter">
+                    <option value="">All</option>
+                    <option value="critical">Critical</option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Sort</span>
+                  <select id="review-sort-filter">
+                    <option value="sla">SLA</option>
+                    <option value="priority">Priority</option>
+                    <option value="created_at">Created</option>
+                    <option value="assignee">Assignee</option>
+                  </select>
+                </label>
+                <button class="secondary-button" type="submit">Refresh Queue</button>
+              </form>
+
+              <div class="queue-shell">
+                <div class="queue-header">
+                  <h3>Queue</h3>
+                  <span id="review-queue-meta" class="mini-meta"></span>
+                </div>
+                <div id="review-queue-list" class="queue-list"></div>
+              </div>
+            </aside>
+
+            <div class="detail-card">
+              <div class="detail-header">
+                <div>
+                  <p class="panel-kicker">Selected Case</p>
+                  <h3 id="review-case-title">No case selected</h3>
+                </div>
+                <label class="field detail-field">
+                  <span>Open case by ID</span>
+                  <div class="inline-field">
+                    <input id="review-case-id" type="text" placeholder="Paste case_id" />
+                    <button id="review-open-case" class="secondary-button" type="button">Open</button>
+                  </div>
+                </label>
+              </div>
+
+              <form id="review-actions" class="field-grid compact-grid">
+                <label class="field">
+                  <span>Actor ID</span>
+                  <input id="review-actor-id" type="text" placeholder="reviewer-7" />
+                </label>
+                <label class="field">
+                  <span>Assignee ID</span>
+                  <input id="review-assignee-id" type="text" placeholder="field-agent-7" />
+                </label>
+                <label class="field field-span-2">
+                  <span>Note</span>
+                  <input id="review-note" type="text" placeholder="Operator note for the workflow log" />
+                </label>
+              </form>
+
+              <div class="action-row">
+                <button class="action-chip" data-action="claim" type="button">Claim</button>
+                <button class="action-chip" data-action="approve" type="button">Approve</button>
+                <button class="action-chip" data-action="assign" type="button">Assign</button>
+                <button class="action-chip" data-action="dispatch" type="button">Dispatch</button>
+                <button class="action-chip" data-action="reject" type="button">Reject</button>
+                <button class="action-chip" data-action="close" type="button">Close</button>
+                <button class="action-chip" data-action="reopen" type="button">Reopen</button>
+              </div>
+
+              <div id="review-case-detail" class="result-card empty-state">
+                Choose a case from the queue to inspect its route, review state, and workflow history.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="analytics">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Operations Insight</p>
+              <h2>Analytics UI</h2>
+            </div>
+            <p class="panel-description">
+              Pull live case counts and review distribution directly from the backend.
+            </p>
+          </div>
+
+          <div class="support-block">
+            <div>
+              <p class="support-title">Live Summary</p>
+              <p class="support-copy">Refresh to pull the latest operational totals.</p>
+            </div>
+            <button id="refresh-analytics" class="secondary-button" type="button">Refresh Analytics</button>
+          </div>
+
+          <div id="analytics-cards" class="metric-grid"></div>
+          <div class="chart-grid">
+            <div class="chart-card">
+              <h3>Status Distribution</h3>
+              <div id="chart-status" class="bar-chart empty-state">No data yet.</div>
+            </div>
+            <div class="chart-card">
+              <h3>Priority Distribution</h3>
+              <div id="chart-priority" class="bar-chart empty-state">No data yet.</div>
+            </div>
+            <div class="chart-card chart-card-wide">
+              <h3>Institution Load</h3>
+              <div id="chart-institution" class="bar-chart empty-state">No data yet.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="institution">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Institution Workflow</p>
+              <h2>Institution Response UI</h2>
+            </div>
+            <p class="panel-description">
+              Verify response evidence against an existing case using the case-based verification route.
+            </p>
+          </div>
+
+          <form id="institution-form" class="stack">
+            <div class="field-grid">
+              <label class="field">
+                <span>Case ID</span>
+                <input id="institution-case-id" type="text" placeholder="Existing case_id" required />
+              </label>
+              <label class="field">
+                <span>Actor ID</span>
+                <input id="institution-actor-id" type="text" placeholder="institution-user-1" />
+              </label>
+              <label class="field">
+                <span>Location hint</span>
+                <input id="institution-location" type="text" placeholder="Verified location" />
+              </label>
+              <label class="field">
+                <span>Response evidence</span>
+                <input id="institution-files" type="file" multiple />
+              </label>
+              <label class="field field-span-2">
+                <span>Response text</span>
+                <textarea
+                  id="institution-response-text"
+                  rows="5"
+                  placeholder="Describe what was repaired, cleaned, restored, or inspected."
+                  required
+                ></textarea>
+              </label>
+              <label class="field field-span-2">
+                <span>Note</span>
+                <input id="institution-note" type="text" placeholder="Optional verification note" />
+              </label>
+            </div>
+
+            <div class="support-block">
+              <div>
+                <p class="support-title">Selected response evidence</p>
+                <ul id="institution-file-list" class="token-list"></ul>
+              </div>
+              <button class="primary-button" type="submit">Verify Existing Case</button>
+            </div>
+          </form>
+
+          <div id="institution-result" class="result-card empty-state">
+            Submit an institution response to see same-place and resolved-state verification results.
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app-assets/app.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+{"text":"small cosmetic issue that can wait for routine maintenance","label":"low","source":"bootstrap_corpus"}
+{"text":"minor complaint without danger traffic impact or public risk","label":"low","source":"bootstrap_corpus"}
+{"text":"faded paint and light cosmetic wear on municipal property","label":"low","source":"bootstrap_corpus"}
+{"text":"general inconvenience but no safety problem or blockage","label":"low","source":"bootstrap_corpus"}
+{"text":"non urgent service request for cleanup when crews are available","label":"low","source":"bootstrap_corpus"}
+{"text":"small repair requested in a quiet area with no public hazard","label":"low","source":"bootstrap_corpus"}
+{"text":"routine maintenance issue on side lane with little disruption","label":"low","source":"bootstrap_corpus"}
+{"text":"cosmetic municipal defect with no pedestrians or vehicles at risk","label":"low","source":"bootstrap_corpus"}
+{"text":"broken street light causing dark area for several nights","label":"medium","source":"bootstrap_corpus"}
+{"text":"overflowing trash bins causing inconvenience to residents","label":"medium","source":"bootstrap_corpus"}
+{"text":"water leak on side street making path slippery after rain","label":"medium","source":"bootstrap_corpus"}
+{"text":"bus stop shelter damaged and people exposed to weather","label":"medium","source":"bootstrap_corpus"}
+{"text":"fallen branch partly blocking walkway but alternative path exists","label":"medium","source":"bootstrap_corpus"}
+{"text":"public transport display failure causing confusion at station","label":"medium","source":"bootstrap_corpus"}
+{"text":"street sign damaged in neighborhood road with moderate traffic","label":"medium","source":"bootstrap_corpus"}
+{"text":"drain overflow affecting nearby residents but not major road access","label":"medium","source":"bootstrap_corpus"}
+{"text":"deep pothole on main road near school at night","label":"high","source":"bootstrap_corpus"}
+{"text":"traffic signal failure at busy intersection during rush hour","label":"high","source":"bootstrap_corpus"}
+{"text":"large water leak flooding street near hospital entrance","label":"high","source":"bootstrap_corpus"}
+{"text":"streetlight outage near pedestrian underpass creating safety concern","label":"high","source":"bootstrap_corpus"}
+{"text":"tree limb hanging above parked cars and sidewalk","label":"high","source":"bootstrap_corpus"}
+{"text":"missing crosswalk sign at school zone with children crossing","label":"high","source":"bootstrap_corpus"}
+{"text":"bus platform damage causing passengers to step into traffic lane","label":"high","source":"bootstrap_corpus"}
+{"text":"road barrier broken on fast moving avenue with collision risk","label":"high","source":"bootstrap_corpus"}
+{"text":"sinkhole causing accident risk on bridge approach","label":"critical","source":"bootstrap_corpus"}
+{"text":"exposed electrical wires and fire danger near walkway","label":"critical","source":"bootstrap_corpus"}
+{"text":"road collapse with injuries and ambulance needed","label":"critical","source":"bootstrap_corpus"}
+{"text":"major gas or utility hazard with immediate evacuation concern","label":"critical","source":"bootstrap_corpus"}
+{"text":"floodwater cutting off hospital access and threatening vehicles","label":"critical","source":"bootstrap_corpus"}
+{"text":"traffic control failure creating imminent collision risk at interchange","label":"critical","source":"bootstrap_corpus"}
+{"text":"falling tree about to strike playground or occupied path","label":"critical","source":"bootstrap_corpus"}
+{"text":"severe structural roadway failure with direct danger to life","label":"critical","source":"bootstrap_corpus"}
+{"text":"retaining wall collapse beside underpass creating immediate danger on carriageway","label":"critical","source":"bootstrap_corpus"}

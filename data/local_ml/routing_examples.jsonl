@@ -1,0 +1,66 @@
+{"text":"deep pothole on main road near school entrance causing cars to swerve","label":"road_damage","source":"bootstrap_corpus"}
+{"text":"collapsed asphalt beside hospital driveway with sharp crater","label":"road_damage","source":"bootstrap_corpus"}
+{"text":"broken pavement and cracked sidewalk along avenue frontage","label":"road_damage","source":"bootstrap_corpus"}
+{"text":"road surface damaged after rain and buses cannot pass safely","label":"road_damage","source":"bootstrap_corpus"}
+{"text":"large hole in street near market lane damaging vehicle tires","label":"road_damage","source":"bootstrap_corpus"}
+{"text":"sidewalk tiles broken and pedestrians stepping into traffic lane","label":"road_damage","source":"bootstrap_corpus"}
+{"text":"bridge approach has severe asphalt failure and rough edges","label":"road_damage","source":"bootstrap_corpus"}
+{"text":"sunken road patch on boulevard creating dangerous dip for drivers","label":"road_damage","source":"bootstrap_corpus"}
+{"text":"street light not working and neighborhood is dark for three nights","label":"street_lighting","source":"bootstrap_corpus"}
+{"text":"lamp post near bus stop failed and waiting area is unsafe","label":"street_lighting","source":"bootstrap_corpus"}
+{"text":"park walkway lights out after sunset near playground","label":"street_lighting","source":"bootstrap_corpus"}
+{"text":"several pole lights blinking and then turning off on avenue","label":"street_lighting","source":"bootstrap_corpus"}
+{"text":"broken lantern over underpass entrance leaves crossing in darkness","label":"street_lighting","source":"bootstrap_corpus"}
+{"text":"public square lighting outage around fountain and benches","label":"street_lighting","source":"bootstrap_corpus"}
+{"text":"streetlamp cover damaged and light fixture no longer works","label":"street_lighting","source":"bootstrap_corpus"}
+{"text":"pedestrian path is dark because municipal lighting circuit failed","label":"street_lighting","source":"bootstrap_corpus"}
+{"text":"water pipe leak flooding road beside apartment block","label":"water_infrastructure","source":"bootstrap_corpus"}
+{"text":"sewer overflow and dirty water smell near residential entrance","label":"water_infrastructure","source":"bootstrap_corpus"}
+{"text":"burst main line is spilling water onto street corner","label":"water_infrastructure","source":"bootstrap_corpus"}
+{"text":"storm drain blocked and rainwater pooling across intersection","label":"water_infrastructure","source":"bootstrap_corpus"}
+{"text":"broken hydrant leaking onto sidewalk and roadway","label":"water_infrastructure","source":"bootstrap_corpus"}
+{"text":"drainage cover area overflowing after routine household discharge","label":"water_infrastructure","source":"bootstrap_corpus"}
+{"text":"wastewater backing up from manhole near shop entrance","label":"water_infrastructure","source":"bootstrap_corpus"}
+{"text":"underground pipe rupture causing constant water loss by curb","label":"water_infrastructure","source":"bootstrap_corpus"}
+{"text":"overflowing trash bins and garbage scattered around market","label":"waste_management","source":"bootstrap_corpus"}
+{"text":"municipal waste not collected and bins are full on the street","label":"waste_management","source":"bootstrap_corpus"}
+{"text":"illegal dumping of household rubbish beside empty lot","label":"waste_management","source":"bootstrap_corpus"}
+{"text":"garbage bags left for days creating bad smell near apartments","label":"waste_management","source":"bootstrap_corpus"}
+{"text":"public bin damaged and litter spreading across sidewalk","label":"waste_management","source":"bootstrap_corpus"}
+{"text":"recycling point is overflowing and surrounding area is unclean","label":"waste_management","source":"bootstrap_corpus"}
+{"text":"trash pickup missed residential block and waste is piling up","label":"waste_management","source":"bootstrap_corpus"}
+{"text":"sanitation issue with rubbish and food waste near school fence","label":"waste_management","source":"bootstrap_corpus"}
+{"text":"fallen tree branch blocking park walking path","label":"tree_maintenance","source":"bootstrap_corpus"}
+{"text":"dangerous tree leaning over playground and benches","label":"tree_maintenance","source":"bootstrap_corpus"}
+{"text":"bushes and overgrown branches obstruct house entrance","label":"tree_maintenance","source":"bootstrap_corpus"}
+{"text":"tree limb snapped after wind and hangs above parked cars","label":"tree_maintenance","source":"bootstrap_corpus"}
+{"text":"roots from large tree damaging curb and pedestrian path","label":"tree_maintenance","source":"bootstrap_corpus"}
+{"text":"municipal greenery needs pruning along sidewalk corridor","label":"tree_maintenance","source":"bootstrap_corpus"}
+{"text":"fallen trunk blocks green area access and needs removal","label":"tree_maintenance","source":"bootstrap_corpus"}
+{"text":"dense branches covering street signs and crossing visibility","label":"tree_maintenance","source":"bootstrap_corpus"}
+{"text":"traffic light failure at busy intersection","label":"signage_safety","source":"bootstrap_corpus"}
+{"text":"crosswalk sign missing near school crossing zone","label":"signage_safety","source":"bootstrap_corpus"}
+{"text":"road safety barrier broken beside highway lane","label":"signage_safety","source":"bootstrap_corpus"}
+{"text":"pedestrian signal stuck on red while cars keep moving","label":"signage_safety","source":"bootstrap_corpus"}
+{"text":"warning sign for roadworks has fallen and is unreadable","label":"signage_safety","source":"bootstrap_corpus"}
+{"text":"zebra crossing paint and sign visibility are dangerously poor","label":"signage_safety","source":"bootstrap_corpus"}
+{"text":"median guardrail damaged after collision near interchange","label":"signage_safety","source":"bootstrap_corpus"}
+{"text":"school-zone speed sign is broken and tilted away from traffic","label":"signage_safety","source":"bootstrap_corpus"}
+{"text":"bus stop shelter broken and commuters waiting in rain","label":"public_transport","source":"bootstrap_corpus"}
+{"text":"metro station escalator issue affecting passengers","label":"public_transport","source":"bootstrap_corpus"}
+{"text":"tram stop information board damaged and unreadable","label":"public_transport","source":"bootstrap_corpus"}
+{"text":"bus arrival display is offline at central terminal","label":"public_transport","source":"bootstrap_corpus"}
+{"text":"platform canopy leaking water onto passengers at suburban station","label":"public_transport","source":"bootstrap_corpus"}
+{"text":"public transport stop bench collapsed near route entrance","label":"public_transport","source":"bootstrap_corpus"}
+{"text":"bus lane stop marker missing and buses skip the stop","label":"public_transport","source":"bootstrap_corpus"}
+{"text":"station elevator out of service for mobility-impaired riders","label":"public_transport","source":"bootstrap_corpus"}
+{"text":"citizen complaint needs manual public service review because category is unclear","label":"general_public_service","source":"bootstrap_corpus"}
+{"text":"municipal service issue reported without enough detail for direct routing","label":"general_public_service","source":"bootstrap_corpus"}
+{"text":"general public complaint that needs triage by operations desk","label":"general_public_service","source":"bootstrap_corpus"}
+{"text":"service request mentions multiple unrelated issues and requires manual sorting","label":"general_public_service","source":"bootstrap_corpus"}
+{"text":"unclear complaint about local administration response delay","label":"general_public_service","source":"bootstrap_corpus"}
+{"text":"public inconvenience described without clear infrastructure ownership","label":"general_public_service","source":"bootstrap_corpus"}
+{"text":"resident asks for municipal help but the issue type is not specific","label":"general_public_service","source":"bootstrap_corpus"}
+{"text":"mixed civic concern requiring manual classification and desk review","label":"general_public_service","source":"bootstrap_corpus"}
+{"text":"retaining wall collapse damaged carriageway beside underpass near library","label":"road_damage","source":"bootstrap_corpus"}
+{"text":"underpass roadway failure with broken carriageway and dangerous sink area","label":"road_damage","source":"bootstrap_corpus"}
